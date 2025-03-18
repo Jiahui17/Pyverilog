@@ -630,7 +630,7 @@ class VerilogParser(object):
                              signed=signed, lineno=lineno))
 
         # Declassign of reg is the same as an initial block with blocking
-        # assignment (others are the same as constants).
+        # assignment.
         if 'reg' in sigtypes:
             decls.append(Initial(BlockingSubstitution(*(assign.children()))))
         else:
